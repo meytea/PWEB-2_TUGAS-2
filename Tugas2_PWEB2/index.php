@@ -8,7 +8,7 @@
     <title>Courses Data</title>
     <?php
     // Mengkoneksikan dengan file koneksi.php yang berisi definisi kelas // Include koneksi.php yang berisi definisi kelas
-
+      include('koneksi.php');
     
     // Instansiasi Object dari Kelas 
     $courses = new Courses();          // Object untuk tabel 'courses'
