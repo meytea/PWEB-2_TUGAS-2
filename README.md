@@ -259,18 +259,23 @@ php
 </ol>
 
 <h3>Output Tampilan untuk Menampilkan Semua Data dari tabel Course</h3>
+
 ![All_courses](https://github.com/user-attachments/assets/d3aff05b-507a-4c5c-ada7-73fc2f187994)
 
 <h3>Output Tampilan untuk Menampilkan Semua Data dari tabel Course Classes</h3>
+
 ![All_courses_classes](https://github.com/user-attachments/assets/6ebec1f8-bfa1-4473-9a57-d50a600e657a)
 
 <h3>Output Tampilan untuk Menampilkan Semua Data dari tabel courses yang hanya menampilkan Course Name Matematika</h3>
+
 ![Matematika](https://github.com/user-attachments/assets/0e590e7a-bfe3-4229-8894-a41731f91c3a)
 
 <h3>Output Tampilan untuk Menampilkan Semua Data dari tabel courses yang hanya menampilkan Course Name Ilmu Pengetahuan</h3>
+
 ![Ilmu_Pengetahuan](https://github.com/user-attachments/assets/9413bfc8-3604-42cb-9493-5ca0ea4c56e1)
 
 <h3>Output Tampilan untuk Menampilkan Semua Data dari tabel Course Classes yang hanya menampilkan Course Id nya 1 </h3>
+
 ![Courses_classes_ID1](https://github.com/user-attachments/assets/5f2d08a3-290f-4cf6-8417-426985e386cb)
 
 
