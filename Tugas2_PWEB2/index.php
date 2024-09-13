@@ -7,28 +7,27 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <title>Courses Data</title>
     <?php
-    // Include database and class definitions
-    include('koneksi.php'); // Include koneksi.php yang berisi definisi kelas
+    // Mengkoneksikan dengan file koneksi.php yang berisi definisi kelas // Include koneksi.php yang berisi definisi kelas
 
     
-    // Instantiate objects from classes
+    // Instansiasi Object dari Kelas 
     $courses = new Courses();          // Object untuk tabel 'courses'
     $course_classes = new Course_classes(); // Object untuk tabel 'course_classes'
     $course_mtk = new CourseMtk();     // Object untuk kursus 'Matematika'
     $course_ip = new CourseIp();       // Object untuk kursus 'Ilmu Pengetahuan'
     $course_id = new CourseId();       // Object untuk kelas kursus dengan ID 1
 
-    // Default data is all courses
-    $selected_option = 'all_courses';  // Pilihan default
-    $data = $courses->TampilData();    // Ambil data default (semua kursus)
+    // Menyimpan nilai pilihan untuk mengontrol data apa yang akan diambil dan ditampilkan. 
+    $selected_option = 'all_courses';  // menunjukkan bahwa semua kursus akan ditampilkan secara default.
+    $data = $courses->TampilData();    // mengambil data dari tabel courses dan menyimpannya ke dalam $data
 
-    // Check for user selection Cek untu
+    // Cek apakah ada pilihan yang dikirim melalui form
     if (isset($_POST['data_select'])) {
         // Ambil nilai yang dipilih oleh pengguna
         $selected_option = $_POST['data_select'];
         // Pilih data berdasarkan nilai yang dipilih
         if ($selected_option == 'all_courses') {
-            $data = $courses->TampilData(); // Amb il semua data kursus
+            $data = $courses->TampilData(); // Ambil semua data kursus
         } elseif ($selected_option == 'all_classes') {
             $data = $course_classes->TampilData(); // Ambil semua data kelas kursus
         } elseif ($selected_option == 'matematika') {
@@ -58,6 +57,7 @@
                 <div class="form-group">
                   <label for="data_select">Select Data:</label>
                   <select class="form-control" id="data_select" name="data_select">
+      
                     <!-- Pilihan dropdown untuk memilih data yang ingin ditampilkan -->
                     <option value="all_courses" <?php echo ($selected_option == 'all_courses') ? 'selected' : ''; ?>>All Courses</option>
                     <option value="all_classes" <?php echo ($selected_option == 'all_classes') ? 'selected' : ''; ?>>All Course Classes</option>
@@ -75,6 +75,7 @@
                 <thead>
                   <tr>
                     <?php if ($selected_option == 'all_courses' || $selected_option == 'matematika' || $selected_option == 'ilmu_pengetahuan') { ?>
+                                                                                                                                                
                       <!-- Header tabel untuk data kursus -->
                       <th scope="col">No.</th>
                       <th scope="col">ID</th>
@@ -87,6 +88,7 @@
                       <th scope="col">Updated At</th>
                       <th scope="col">Deleted At</th>
                     <?php } elseif ($selected_option == 'all_classes' || $selected_option == 'course_id_1') { ?>
+                                                                                                             
                       <!-- Header tabel untuk data kelas kursus -->
                       <th scope="col">Class ID</th>
                       <th scope="col">Student Class ID</th>
@@ -105,6 +107,7 @@
                   ?>
                   <tr>
                     <?php if ($selected_option == 'all_courses' || $selected_option == 'matematika' || $selected_option == 'ilmu_pengetahuan') { ?>
+                                                                                                                                                
                       <!-- Tampilkan data kursus -->
                       <td><?php echo $no++ ?></td>
                       <td><?php echo $row['id'] ?></td>
@@ -117,6 +120,7 @@
                       <td><?php echo $row['updated_at'] ?></td>
                       <td><?php echo $row['deleted_at'] ?></td>
                     <?php } elseif ($selected_option == 'all_classes' || $selected_option == 'course_id_1') { ?>
+                                                                                                             
                       <!-- Tampilkan data kelas kursus -->
                       <td><?php echo $row['id'] ?></td>
                       <td><?php echo $row['student_class_id'] ?></td>
